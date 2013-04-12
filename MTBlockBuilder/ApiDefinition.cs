@@ -38,17 +38,3 @@ namespace MTBlockBuilder
 	}
 }
 
-//namespace MonoTouch.Foundation
-//{
-//	[BaseType (typeof (NSObject))]
-//	[Category]
-//	interface NSObject 
-//	{
-//		[Export ("objc_BlockSend:")]
-//		NSObject objcBlockSend(NSObject[] args);
-//		
-//		[Export ("objc_BlockSend_Noreturn:")]
-//		void objcBlockSend_NoReturn(NSObject[] args);
-//	}
-//}
-
