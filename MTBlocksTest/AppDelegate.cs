@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 using MTBlockBuilder;
+using SitecoreMobileSDK;
 
 namespace MTBlocksTest
 {
@@ -46,6 +47,20 @@ namespace MTBlocksTest
 			operationArgs[0] = callback;
 			operation.objcBlockSend_NoReturn( operationArgs );
 
+
+
+			SCApiContext context = SCApiContext.contextWithHostLoginPassword( "ws-alr1.dk.sitecore.net:8094/-/item", "sitecore\\admin", "b" );
+			NSObject loader = context.itemReaderForItemId( "{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" );
+
+			SingleItemReaderCallback loaderCallback = delegate( NSObject receivedObject, NSError error )
+			{
+				SCItem receivedItem = (SCItem)receivedObject;
+				
+				Console.WriteLine( receivedItem.itemId );
+				Console.WriteLine( "===Loaded===" );
+			};
+
+			loader.block_ExecuteWithCallback2( loaderCallback );
 
 			viewController = new MTBlocksTestViewController ();
 			window.RootViewController = viewController;
