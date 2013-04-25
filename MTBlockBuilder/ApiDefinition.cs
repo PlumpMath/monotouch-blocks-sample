@@ -11,6 +11,8 @@ namespace MTBlockBuilder
 //	public delegate void BBAsyncOpResult( NSObject result, NSError error );
 //	public delegate void BBAsyncOp( BBAsyncOpResult handler );
 
+
+	public delegate void SingleItemReaderCallback( NSObject item, NSError error );
 	
 	[BaseType (typeof (NSObject))]
 	interface BlockBuilder
@@ -35,6 +37,40 @@ namespace MTBlockBuilder
 
 		[Export ("objc_BlockSend_Noreturn:")]
 		void objcBlockSend_NoReturn(NSObject[] args);
+
+		[Export ("block_ExecuteWithCallback2:")]
+		void block_ExecuteWithCallback2( SingleItemReaderCallback callback );
 	}
 }
+
+namespace SitecoreMobileSDK
+{
+	[BaseType (typeof (NSObject))]
+	interface SCItem
+	{
+		[Export ("itemId")]
+		String itemId { get; }
+	}
+	
+	
+	
+	[BaseType (typeof (NSObject))]
+	interface SCApiContext
+	{
+		[Static] 
+		[Export ("contextWithHost:login:password:")]
+		SCApiContext contextWithHostLoginPassword( String host, String login, String password );
+		
+		[Static]
+		[Export ("contextWithHost:")]
+		SCApiContext contextWithHost( String host );
+		
+		[Export ("itemWithId:")]
+		SCItem itemWithId( String itemId );
+
+		[Export ("itemReaderForItemId:")]
+		NSObject itemReaderForItemId( String itemId );
+	}
+}
+
 
