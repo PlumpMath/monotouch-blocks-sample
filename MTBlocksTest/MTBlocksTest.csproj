@@ -25,6 +25,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
+    <MtouchSdkVersion>6.1</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -49,6 +50,8 @@
     <MtouchLink>Full</MtouchLink>
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
+    <MtouchSdkVersion>6.1</MtouchSdkVersion>
+    <IpaPackageName />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
