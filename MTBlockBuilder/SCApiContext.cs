@@ -1,12 +1,13 @@
 using System;
+using MonoTouch;
+using MonoTouch.Foundation;
 
-namespace MTBlockBuilder
+
+namespace SitecoreMobileSDK
 {
-	public class SCApiContext
+	public partial class SCApiContext : NSObject
 	{
-		public SCApiContext ()
-		{
-		}
 	}
 }
+
 

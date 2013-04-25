@@ -50,6 +50,9 @@
     <ObjcBindingNativeLibrary Include="..\libMotionBlocks.a">
       <Link>libMotionBlocks.a</Link>
     </ObjcBindingNativeLibrary>
+    <ObjcBindingNativeLibrary Include="..\libSitecoreMobileSDK.a">
+      <Link>libSitecoreMobileSDK.a</Link>
+    </ObjcBindingNativeLibrary>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="libBlockBuilder.linkwith.cs">
@@ -59,5 +62,10 @@
     <Compile Include="libMotionBlocks.linkwith.cs">
       <DependentUpon>libMotionBlocks.a</DependentUpon>
     </Compile>
+    <Compile Include="libSitecoreMobileSDK.linkwith.cs">
+      <DependentUpon>libSitecoreMobileSDK.a</DependentUpon>
+    </Compile>
+    <Compile Include="SCItem.cs" />
+    <Compile Include="SCApiContext.cs" />
   </ItemGroup>
 </Project>
